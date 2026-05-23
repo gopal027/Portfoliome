@@ -1,0 +1,97 @@
+export default function Portfolio() { const skills = [ "Python", "C++", "JavaScript", "AI / ML", "Problem Solving", "Web Development", ];
+
+const projects = [ { title: "AI Assistant Project", desc: "An AI-based assistant project using Python and automation concepts.", }, { title: "Brain Activity Tracking System", desc: "A future-focused Python project for tracking and analyzing brain activity data.", }, { title: "Portfolio Website", desc: "A modern responsive portfolio website built for personal branding and career growth.", }, ];
+
+return ( <div className="min-h-screen bg-black text-white px-6 py-10"> <div className="max-w-6xl mx-auto"> {/* Hero Section */} <section className="grid md:grid-cols-2 gap-10 items-center"> <div> <p className="text-blue-400 text-lg mb-2">Hello, I'm</p> <h1 className="text-5xl md:text-7xl font-bold leading-tight"> Gopal Krishna Pandey </h1> <p className="mt-6 text-gray-300 text-lg leading-relaxed"> Coding enthusiast and AI learner passionate about building future-ready projects. Skilled in Python, AI/ML, problem solving, and web technologies. </p>
+
+<div className="flex gap-4 mt-8 flex-wrap">
+          <button className="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-2xl text-lg font-semibold transition">
+            Hire Me
+          </button>
+
+          <button className="border border-gray-500 hover:border-white px-6 py-3 rounded-2xl text-lg transition">
+            Download Resume
+          </button>
+        </div>
+      </div>
+
+      <div className="flex justify-center">
+        <div className="w-72 h-72 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-2xl text-7xl font-bold">
+          GP
+        </div>
+      </div>
+    </section>
+
+    {/* Skills */}
+    <section className="mt-24">
+      <h2 className="text-4xl font-bold mb-8">Skills</h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 text-center hover:scale-105 transition"
+          >
+            <p className="text-lg font-medium">{skill}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Projects */}
+    <section className="mt-24">
+      <h2 className="text-4xl font-bold mb-8">Projects</h2>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 shadow-xl hover:-translate-y-2 transition"
+          >
+            <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
+            <p className="text-gray-300 leading-relaxed">{project.desc}</p>
+
+            <button className="mt-6 bg-white text-black px-4 py-2 rounded-xl font-semibold hover:opacity-90">
+              View Project
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* About */}
+    <section className="mt-24 bg-zinc-900 rounded-3xl p-8 border border-zinc-800">
+      <h2 className="text-4xl font-bold mb-6">About Me</h2>
+
+      <p className="text-gray-300 text-lg leading-relaxed">
+        I am a college student interested in coding, AI, machine learning, and modern technology.
+        I enjoy building projects, learning new skills, and creating systems that can help people.
+        My goal is to grow as a software developer and AI engineer while building impactful projects.
+      </p>
+    </section>
+
+    {/* Contact */}
+    <section className="mt-24 text-center">
+      <h2 className="text-4xl font-bold mb-4">Contact</h2>
+      <p className="text-gray-400 text-lg">
+        Ready to collaborate on projects, internships, or opportunities.
+      </p>
+
+      <div className="mt-8 flex justify-center gap-4 flex-wrap">
+        <button className="bg-blue-500 px-6 py-3 rounded-2xl font-semibold hover:bg-blue-600 transition">
+          Email Me
+        </button>
+
+        <button className="border border-gray-500 px-6 py-3 rounded-2xl hover:border-white transition">
+          GitHub
+        </button>
+
+        <button className="border border-gray-500 px-6 py-3 rounded-2xl hover:border-white transition">
+          LinkedIn
+        </button>
+      </div>
+    </section>
+  </div>
+</div>
+
+); }
