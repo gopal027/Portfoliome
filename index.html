@@ -12,11 +12,17 @@
       font-family:Arial,sans-serif;
     }
 
-    body{
-      background:#050816;
-      color:white;
-      line-height:1.6;
-    }
+  body{
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #4da3ff, #8b5cf6);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+
+  color:white;
+  line-height:1.6;
+
+  position: relative;
+  overflow-x: hidden;
+  }
 
     header{
       display:flex;
@@ -150,6 +156,11 @@
       .hero-text h2{
         font-size:42px;
       }
+    }
+    @keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
     }
   </style>
 </head>
