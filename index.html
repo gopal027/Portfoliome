@@ -166,6 +166,33 @@
       50%{background-position:100% 50%;}
       100%{background-position:0% 50%;}
     }
+/* 📱 MOBILE VIEW FIXES */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 40px 5%;
+  }
+
+  .hero-text {
+    margin-bottom: 40px; /* Text aur image ke bich gap ke liye */
+  }
+
+  .profile {
+    margin: 0 auto; /* Image ko exactly center karne ke liye */
+  }
+
+  /* Header (Navigation) ko bhi mobile me thik dikhane ke liye thoda adjust kar dete hain */
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  nav a {
+    margin: 0 10px; /* Links ke bich barabar space */
+  }
+}
 
   </style>
 </head>
