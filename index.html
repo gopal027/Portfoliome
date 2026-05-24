@@ -162,7 +162,7 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h2>AI & Python Developer</h2>
+    <h2><span id="typing"></span></h2>
 
     <p>
       Passionate about Artificial Intelligence, coding,
@@ -232,6 +232,39 @@
 <footer>
   © 2026 Gopal Krishna Pandey | AI Portfolio
 </footer>
+<script>
+const text = [
+  "AI Developer",
+  "Python Programmer",
+  "Future ML Engineer",
+  "Cyberpunk Coder"
+];
 
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type() {
+
+  if (count === text.length) {
+    count = 0;
+  }
+
+  currentText = text[count];
+  letter = currentText.slice(0, ++index);
+
+  document.getElementById("typing").textContent = letter;
+
+  if(letter.length === currentText.length){
+    count++;
+    index = 0;
+    setTimeout(type, 1200);
+  } else {
+    setTimeout(type, 120);
+  }
+
+})();
+</script>
 </body>
 </html>
