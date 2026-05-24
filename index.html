@@ -271,5 +271,70 @@ let letter = "";
 
 })();
 </script>
+  <canvas id="rain"></canvas>
+
+<script>
+const canvas = document.getElementById("rain");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let drops = [];
+
+function createRain(x, y) {
+  for (let i = 0; i < 80; i++) {
+    drops.push({
+      x: x,
+      y: y,
+      speed: Math.random() * 5 + 2,
+      length: Math.random() * 20 + 10
+    });
+  }
+}
+
+function drawRain() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = "#00f7ff";
+  ctx.lineWidth = 2;
+
+  for (let i = 0; i < drops.length; i++) {
+    let d = drops[i];
+
+    ctx.beginPath();
+    ctx.moveTo(d.x, d.y);
+    ctx.lineTo(d.x, d.y + d.length);
+    ctx.stroke();
+
+    d.y += d.speed;
+
+    if (d.y > canvas.height) {
+      drops.splice(i, 1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(drawRain);
+}
+
+window.addEventListener("click", (e) => {
+  createRain(e.clientX, e.clientY);
+});
+
+drawRain();
+</script>
+
+<style>
+#rain{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:9999;
+}
+</style>
 </body>
 </html>
